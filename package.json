@@ -1,0 +1,17 @@
+{
+  "name": "thevault",
+  "version": "1.0.0",
+  "description": "A simple to use Vault bot to store all of your text, links, and... and uh, that other stuff.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "simple-json-db": "^1.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "spinfal",
+  "license": "ISC"
+}

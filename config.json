@@ -1,0 +1,8 @@
+{
+  "prefix": "v!",
+  "invite": "https://discord.com/api/oauth2/authorize?client_id=883863529768226926&permissions=125952&scope=bot",
+  "status": {
+    "type": "WATCHING",
+    "text": "the keys to The Vault"
+  }
+}
