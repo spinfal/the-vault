@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/788198099067076639/883934215115264010/image0.jpg" />
+</p>
+
 # The Vault
 A simple to use Vault bot to store all of your text, links, and... and uh, that other stuff.
 
