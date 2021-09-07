@@ -3,7 +3,8 @@
 </p>
 
 # The Vault
-A simple to use Vault bot to store all of your text, links, and... and uh, that other stuff.
+- A simple to use Vault bot to store all of your text, links, and... and uh, that other stuff.
+- Don't want your JSON files stored locally? Use [this branch instead](https://github.com/spinfal/the-vault/tree/pantry-api-version).
 
 # Setup
 - Create a bot on Discord's Developer dashboard
