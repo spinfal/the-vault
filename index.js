@@ -34,8 +34,7 @@ client.on("ready", async () => {
       client.user.setActivity(`${res.percentFull} ${(res.percentFull > 1) ? "vaults" : "vault"}`, { type: config.status.type });
     });
   }, 10000);
-  console.log(`Status type: ${config.status.type}
-Status text: ${config.status.text}`);
+  console.log(`Status type: ${config.status.type}`);
   console.log(`Logged in as ${client.user.tag}`);
 });
 
