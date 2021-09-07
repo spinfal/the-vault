@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 /* ----------- */
 const fs = require('fs');
+const fetch = require('node-fetch');
 const config = require('./config.json');
 const prefix = config.prefix;
 const client = new Discord.Client();
@@ -27,9 +28,14 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 // on ready info
-client.on("ready", () => {
-  client.user.setActivity(config.status.text, { type: config.status.type });
-  console.log(`Status type: ${config.status.type}\nStatus text: ${config.status.text}\n`);
+client.on("ready", async () => {
+  setInterval(() => {
+    fetch(`https://getpantry.cloud/apiv1/pantry/${process.env['APIKEY']}`, {method:"GET"}).then(res => res.json()).then(res => {
+      client.user.setActivity(`${res.percentFull} ${(res.percentFull > 1) ? "vaults" : "vault"}`, { type: config.status.type });
+    });
+  }, 10000);
+  console.log(`Status type: ${config.status.type}
+Status text: ${config.status.text}`);
   console.log(`Logged in as ${client.user.tag}`);
 });
 

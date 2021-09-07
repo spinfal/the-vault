@@ -11,10 +11,8 @@ module.exports.run = async (client, message) => {
 \`${prefix}ping\` - returns the bot's ping and latency
 \`${prefix}set <key-name> <the key value>'\` - add a value to your vault
 \`${prefix}get <key-name>\` - get a value from your vault
-\`${prefix}list\` - list everything in your vault
-\`${prefix}delete <key-name>\` *or* \`all\` - delete a value from your vault
-\`${prefix}lock\` - lock your vault using a password you provide
-\`${prefix}unlock\` - unlock your vault using your password
+\`${prefix}delete <key-name>\` or \`all\` - delete a value from your vault
+\`${prefix}list\` - list everythin in your vault
 
 **__Please do not use this bot to store anything sensitive. Although your values are encoded, this bot is not meant for sensitive content.__**`)
       .setTimestamp();
