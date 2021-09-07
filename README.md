@@ -10,6 +10,7 @@ A simple to use Vault bot to store all of your text, links, and... and uh, that 
 - Download as ZIP or use `git clone`
 - Make sure all the files are where you want them, then setup config.json
 - Get your Pantry Key here: https://getpantry.cloud/
+  - Go through the code and replace `process.env['APIKEY']` with your pantry key. I'm not doing that for you.
 - Modify the c0de like the hackerman you are so it looks like your bot
 - Run `npm i`
 - Start the bot `node .` or `node index.js`
