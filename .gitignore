@@ -1,4 +1,5 @@
 *.json
+setpw.js
 
 !config.json
 !package.json

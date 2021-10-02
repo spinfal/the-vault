@@ -6,17 +6,19 @@ const prefix = config.prefix;
 //const JSONdb = require('simple-json-db');
 
 module.exports.run = async (client, message, args) => {
+  const reservedKeyNames = ['all', '_PASSWORD'];
   if (message.author.bot) return;
-  if (args.length < 2) return;
-  const keyName = args.shift();
-  if (keyName === 'all') {
+  let keyName = args.shift();
+  if (args.length == 0 && message.attachments.first() === undefined) return;
+  if (reservedKeyNames.includes(keyName)) {
     const errorEmbed = new MessageEmbed()
       .setTitle(`Error`)
-      .setDescription(`The key name "all" cannot be used. Please choose a different key name.`);
+      .setDescription(`The key name "\`${keyName}\`" cannot be used. Please choose a different key name.`);
     if (message.guild !== null) message.delete();
     return message.channel.send(errorEmbed);
   }
-  const buff = Buffer.from(args.join(' '), 'utf-8');
+  
+  const buff = Buffer.from((message.attachments.first() !== undefined) ? message.attachments.first().url : args.join(' '), 'utf-8');
   const value = buff.toString('base64');
 
 let _method = await fetch(`https://getpantry.cloud/apiv1/pantry/${process.env['APIKEY']}/basket/${message.author.id}`,{method:"GET"});

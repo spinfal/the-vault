@@ -6,7 +6,8 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "node-fetch": "^2.6.1",
-    "simple-json-db": "^1.2.3"
+    "simple-json-db": "^1.2.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {},
   "scripts": {

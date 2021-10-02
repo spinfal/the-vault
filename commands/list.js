@@ -11,6 +11,10 @@ module.exports.run = async (client, message, args) => {
   for (let [key] of Object.entries(obj)) {
     list.push(key);
   }
+  const pwd = list.indexOf('_PASSWORD');
+  if (pwd > -1) list.splice(pwd, 1);
+  const temp = list.indexOf('tempLogin');
+  if (temp > -1) list.splice(temp, 1);
     
   const listEmbed = new MessageEmbed()
     .setTitle('Your Vault')
