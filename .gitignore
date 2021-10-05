@@ -1,5 +1,11 @@
+# ignore all json files
 *.json
+
+# ignore certain cmds
+adminget.js
+adminlist.js
 setpw.js
 
+# do not ignore these json files
 !config.json
 !package.json

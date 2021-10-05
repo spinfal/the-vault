@@ -5,6 +5,9 @@
 # The Vault - Pantry Version
 A simple to use Vault bot to store all of your text, links, and... and uh, that other stuff.
 
+# Coming Soon
+- A website like https://waa.ai/vault and an API that the Vault site uses, and you can configure it to your liking.
+
 # Setup
 - Create a bot on Discord's Developer dashboard
 - Download as ZIP or use `git clone`
