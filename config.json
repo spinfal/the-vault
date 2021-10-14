@@ -3,5 +3,10 @@
   "invite": "https://discord.com/api/oauth2/authorize?client_id=883863529768226926&permissions=125952&scope=bot",
   "status": {
     "type": "WATCHING"
-  }
+  },
+  "reservedKeyNames": [
+    "all",
+    "_PASSWORD",
+    "_TWITTER"
+  ]
 }

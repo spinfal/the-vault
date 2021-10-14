@@ -13,6 +13,8 @@ module.exports.run = async (client, message, args) => {
   }
   const pwd = list.indexOf('_PASSWORD');
   if (pwd > -1) list.splice(pwd, 1);
+  const twit = list.indexOf('_TWITTER');
+  if (twit > -1) list.splice(temp, 1);
   const temp = list.indexOf('tempLogin');
   if (temp > -1) list.splice(temp, 1);
     
@@ -25,7 +27,7 @@ module.exports.run = async (client, message, args) => {
     console.log(e);
     const noVal = new MessageEmbed()
       .setTitle('Your Vault')
-      .setDescription('Your vault is empty!');
+      .setDescription('You do not own a vault!');
     if (message.guild !== null) message.delete();
     message.author.send(noVal);
   });

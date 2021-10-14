@@ -3,10 +3,10 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const config = JSON.parse(fs.readFileSync("config.json", "utf8"));
 const prefix = config.prefix;
+const reservedKeyNames = config.reservedKeyNames;
 //const JSONdb = require('simple-json-db');
 
 module.exports.run = async (client, message, args) => {
-  const reservedKeyNames = ['all', '_PASSWORD'];
   if (message.author.bot) return;
   let keyName = args.shift();
   if (args.length == 0 && message.attachments.first() === undefined) return;
@@ -24,11 +24,11 @@ module.exports.run = async (client, message, args) => {
 let _method = await fetch(`https://getpantry.cloud/apiv1/pantry/${process.env['APIKEY']}/basket/${message.author.id}`,{method:"GET"});
   
   fetch(`https://getpantry.cloud/apiv1/pantry/${process.env['APIKEY']}/basket/${message.author.id}`,{method:(await _method.status == 400) ? "POST" : "PUT",headers:{"Content-Type": "application/json"},body:JSON.stringify({[keyName]: value})}).then(res => {
-  const addedEmbed = new MessageEmbed()
-    .setTitle('Successfully added')
-    .setDescription(`${(_method.status == 400) ? "Your vault has been made and your" : "Your"} value has been saved. Run the command \`${prefix}get ${keyName}\``);
-  if (message.guild !== null) message.delete();
-  return message.author.send(addedEmbed);
+    const addedEmbed = new MessageEmbed()
+      .setTitle('Successfully added')
+      .setDescription(`${(_method.status == 400) ? "Your vault has been made and your" : "Your"} value has been saved. Run the command \`${prefix}get ${keyName}\``);
+    if (message.guild !== null) message.delete();
+    return message.author.send(addedEmbed);
   }).catch(e => console.log(e));
 }
 
