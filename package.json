@@ -4,7 +4,7 @@
   "description": "A simple to use Vault bot to store all of your text, links, and... and uh, that other stuff.",
   "main": "index.js",
   "dependencies": {
-    "discord.js": "^12.5.3",
+    "discord.js": "^14.0.0",
     "simple-json-db": "^1.2.3"
   },
   "devDependencies": {},
